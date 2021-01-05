@@ -14,4 +14,4 @@ jobs:
           -H "Content-Type:application/json" \
           -X POST \
           --data "{\"content\": null,\"embeds\": [{\"title\": \"${{ github.repository }}$ Build Complete\",      \"description\": \"Commit: ${{ github.sha }}\\n[Build Artifacts](https://github.com/${{ github.repository }}$/actions/runs/${{ github.run_id }}#artifacts)\",      \"color\": 9371903,      \"author\": {        \"name\": \"Github Builds\"      }    }  ]}" \
-          https://discord.com/api/webhooks/795744798605836298/KJYs6XJBxKDQnGGYVJAhC0h8jSXKJyKFqIp2l_1vUGpGffJHYZZkUI_NIFVUywUjef-E
+          https://discord.com/api/webhooks/${{ secrets.WEBHOOK_ID }}/${{ secrets.WEBHOOK_TOKEN }}
