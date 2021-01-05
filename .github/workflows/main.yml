@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Discord
+        uses: appleboy/discord-action@master
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          args: |
+            {
+              "content": null,
+              "embeds": [
+                {
+                  "title": "CANServer Build Complete",
+                  "description": "c36dfe44b23fc0bb79bcc6905eab277fd9d9ddf7\n[Build Artifacts](https://github.com/pyjamasam/CANserver/actions/runs/462071874#artifacts)",
+                  "color": 9371903,
+                  "author": {
+                    "name": "Github Builds"
+                  }
+                }
+              ]
+            }
